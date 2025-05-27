@@ -13,19 +13,18 @@ public class RateLimiterService {
                     = new Pair(RateLimiterConstant.BUCKET_SIZE - 1, System.currentTimeMillis() + RateLimiterConstant.TIME_WINDOW);
             map.put(customerId, pair);
             return true;
-        }
-        else{
-            if(map.get(customerId).getKey() > 0){
-                Pair pair = new Pair(map.get(customerId).getKey()-1 ,map.get(customerId).getVal());
+        } else {
+            if (map.get(customerId).getKey() > 0) {
+                Pair pair = new Pair(map.get(customerId).getKey() - 1, map.get(customerId).getVal());
                 map.put(customerId, pair);
                 return true;
-            }
-            else {
+            } else {
                 long currentTime = System.currentTimeMillis();
-                if(currentTime > map.get(customerId).getVal()){
+                if (currentTime > map.get(customerId).getVal()) {
                     Pair pair = new Pair(RateLimiterConstant.BUCKET_SIZE - 1, System.currentTimeMillis() + RateLimiterConstant.TIME_WINDOW);
+                    map.put(customerId, pair);
                     return true;
-                }else {
+                } else {
                     return false;
                 }
             }
