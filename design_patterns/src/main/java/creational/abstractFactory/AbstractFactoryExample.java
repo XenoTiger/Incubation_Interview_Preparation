@@ -4,8 +4,8 @@ public class AbstractFactoryExample {
 
     public static void main(String[] args) {
 
-        AbstractFactoryProducer producer = new AbstractFactoryProducer();
-        AbstractCarFactory abstractCarFactory = producer.getFactory("Economic");
+
+        AbstractCarFactory abstractCarFactory = AbstractFactoryProducer.getFactory("Economic");
         Car car = abstractCarFactory.getInstance(20000);
         System.out.println(car.getTopSpeed());
     }

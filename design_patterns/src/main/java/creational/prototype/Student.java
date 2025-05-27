@@ -13,6 +13,15 @@ public class Student implements Prototype{
     }
 
     @Override
+    public String toString() {
+        return "Student{" +
+                "rollNo=" + rollNo +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    @Override
     public Prototype clone() {
         return new Student(rollNo, name, age);
     }

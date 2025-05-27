@@ -2,7 +2,7 @@ package creational.abstractFactory;
 
 public class AbstractFactoryProducer {
 
-    public AbstractCarFactory getFactory(String value) {
+    public static AbstractCarFactory getFactory(String value) {
         if (value.equals("Economic")) {
             return new EconomicCarFactory();
         } else if (value.equals("Luxury")) {

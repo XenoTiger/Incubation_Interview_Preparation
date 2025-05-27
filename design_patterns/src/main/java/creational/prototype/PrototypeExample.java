@@ -6,6 +6,7 @@ public class PrototypeExample {
 
         Student student = new Student(12, "Niraj", 27);
         Student clonedStudent = (Student) student.clone();
+        System.out.println(clonedStudent.toString());
 
     }
 }
